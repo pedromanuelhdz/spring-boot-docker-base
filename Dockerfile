@@ -1,5 +1,5 @@
 FROM openjdk:alpine
-LABEL maintainer="Etienne Koekemoer <me@etiennek.com>"
+LABEL maintainer="Pedro Manuel <pmanuelhdz@gmail.com>"
 
 ENV BOOTAPP_JAVA_OPTS -Xms256m -Xmx256m
 
