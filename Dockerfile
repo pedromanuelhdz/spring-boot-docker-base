@@ -1,4 +1,4 @@
-FROM openjdk:alpine
+FROM openjdk:11.0-jre-slim
 LABEL maintainer="Pedro Manuel <pmanuelhdz@gmail.com>"
 
 ENV BOOTAPP_JAVA_OPTS -Xms256m -Xmx256m
@@ -12,7 +12,7 @@ ENV SERVER_PORT 8007
 COPY wrapper.sh /wrapper.sh
 
 RUN addgroup ${BOOTAPP_GROUP} \
-    && adduser -D -G ${BOOTAPP_GROUP} ${BOOTAPP_USR} \
+    && adduser -disabled-password -ingroup ${BOOTAPP_GROUP} ${BOOTAPP_USR} \
 	&& chmod 555 /wrapper.sh
 
 EXPOSE ${SERVER_PORT}
